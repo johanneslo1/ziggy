@@ -23,7 +23,7 @@ class CommandRouteGenerator extends Command
 
     public function handle()
     {
-        $path = $this->argument('path') == null ? './storage/app/' . config('ziggy.path') : $this->argument('path');
+        $path = $this->argument('path') == "null" ? './storage/app/' . config('ziggy.path') : $this->argument('path');
         $group = $this->option('group');
 
         $generatedRoutes = $this->generate($group);
